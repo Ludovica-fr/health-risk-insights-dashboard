@@ -2,7 +2,7 @@ Health Risk Insights Dashboard (R + Tableau)
 1. Project Overview
 
 Chronic diseases such as diabetes, hypertension, and heart disease are often influenced by lifestyle and demographic factors.
-This project identifies the strongest drivers of chronic disease risk using R, and presents insights in an interactive Tableau dashboard.
+This project identifies the strongest drivers (age, diet, activity level, sleep, alcohol, etc) of chronic disease risk using R, and presents insights in an interactive Tableau dashboard.
 
 This simulates the work of a data analyst in a healthcare or wellbeing team.
 

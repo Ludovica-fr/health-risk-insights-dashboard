@@ -1,1 +1,29 @@
+---
+title: "Heart Disease Exploratory Data Analysis"
+author: "Ludovica"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Introduction
+
+This notebook presents the exploratory data analysis (EDA) for the **Heart Disease Clinical Insights Dashboard** project.  
+The objective is to understand key demographic, clinical, and anatomical factors contributing to heart disease, using:
+
+- **R** for data cleaning and analysis  
+- **Tableau** for visualization and dashboarding  
+
+The dataset used is the **Cleveland Heart Disease dataset**, a classical medical dataset containing 303 patients.
+
+---
+
+# 1. Load Libraries and Data
+
+```{r}
+library(tidyverse)
+
+df <- read_csv("../data/clean/heart_disease_clean.csv",
+               show_col_types = FALSE)
+
+glimpse(df)
 

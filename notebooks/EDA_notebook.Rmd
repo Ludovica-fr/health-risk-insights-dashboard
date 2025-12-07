@@ -27,3 +27,74 @@ df <- read_csv("../data/clean/heart_disease_clean.csv",
 
 glimpse(df)
 
+2. Demographic Exploration
+2.1 Age Distribution
+ggplot(df, aes(x = age)) +
+geom_histogram(bins = 20, fill = "#2C7BB6") +
+theme_minimal() +
+labs(title = "Age Distribution", x = "Age", y = "Count")
+
+Insight:
+The dataset covers a wide age range (29–77), with many patients between 45–65 years old — a typical heart disease cohort.
+
+2.2 Sex Distribution
+ggplot(df, aes(x = sex)) +
+geom_bar(fill = "#ABD9E9") +
+theme_minimal() +
+labs(title = "Sex Distribution", x = "Sex", y = "Count")
+
+Insight:
+The dataset is male-skewed (~68% male), which is expected as heart disease is more prevalent in men at middle age.
+
+3. Disease Prevalence
+ggplot(df, aes(x = target)) +
+geom_bar(fill = "#FDAE61") +
+theme_minimal() +
+labs(title = "Heart Disease Prevalence", x = "Disease Status", y = "Count")
+
+Insight:
+The dataset is balanced (≈45–50% disease), which is ideal for exploratory analysis and modeling.
+
+4. Clinical Indicators
+4.1 Chest Pain Type vs Disease
+ggplot(df, aes(x = cp, fill = target)) +
+geom_bar(position = "fill") +
+scale_y_continuous(labels = scales::percent_format()) +
+theme_minimal() +
+labs(title = "Disease Proportion by Chest Pain Type",
+x = "Chest Pain Type", y = "Proportion")
+
+Insight:
+Asymptomatic patients show the highest disease rates, indicating that lack of chest pain is not necessarily a sign of better heart health.
+
+4.2 Number of Vessels (ca) vs Disease
+ggplot(df, aes(x = ca, fill = target)) +
+geom_bar(position = "fill") +
+scale_y_continuous(labels = scales::percent_format()) +
+theme_minimal() +
+labs(title = "Disease Proportion by Number of Affected Vessels",
+x = "Number of Vessels (ca)", y = "Proportion")
+
+Insight:
+The probability of disease increases sharply as the number of blocked coronary vessels increases — making ca one of the strongest predictors.
+
+4.3 Maximum Heart Rate (thalach) vs Disease
+ggplot(df, aes(x = target, y = thalach, fill = target)) +
+geom_boxplot(alpha = 0.7) +
+theme_minimal() +
+labs(title = "Maximum Heart Rate vs Disease",
+x = "Disease Status", y = "thalach")
+
+Insight:
+Patients with heart disease tend to reach lower maximum heart rates, suggesting reduced exercise tolerance.
+
+5. Summary of Key Insights
+
+Men develop heart disease earlier, women later in life.
+Asymptomatic patients are surprisingly more likely to have heart disease.
+More blocked vessels (ca) → significantly higher risk.
+Lower exercise capacity (thalach) is associated with disease.
+
+6. Link to Tableau Dashboard
+
+The full interactive dashboard is available here: https://public.tableau.com/app/profile/ludovica.douniama/viz/HeathCare_17650341618970/HeartDiseaseClinicalOverviewDashboard#1

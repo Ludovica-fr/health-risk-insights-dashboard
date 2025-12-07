@@ -113,7 +113,7 @@ p_thalach_target <- ggplot(df, aes(x = target, y = thalach, fill = target)) +
   theme_minimal() +
   theme(legend.position = "none")
 
-# 5. (Optional) Save key plots to /reports/visuals -------------------------
+# 5. Saving key plots to /reports/visuals -------------------------
 
 # dir.create("reports/visuals", recursive = TRUE, showWarnings = FALSE)
 # ggsave("reports/visuals/disease_distribution.png", p_disease, width = 5, height = 4)
